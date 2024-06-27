@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch  } from "react-redux";
+import { signInstart, signInSuccess, SignInfailure } from "../redux/users/userSlice";
 
 // Functional component for Sign In
 function Sign_In() {
@@ -10,7 +12,7 @@ function Sign_In() {
   const [loading, setLoading] = useState(false); // State to show loading state
   
   const navigate = useNavigate(); // Navigation hook
-
+  const dispatch = useDispatch();
   // Function to handle form input change
   const handleChange = (e) => {
     setformData({ ...formData, [e.target.id]: e.target.value }); // Update formData state with new value
